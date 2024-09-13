@@ -3,12 +3,15 @@ let computerScore = 0;
 
 
 
-let stillPlay = 1;
+
+
+
+// let stillPlay = 1;
 
 
 function playGame(){
    
-    while(stillPlay <= 5){
+    // while(stillPlay <= 5){
        
         function getComputerChoice(){
             let computerChoice = Math.floor(Math.random() * 3);
@@ -81,10 +84,42 @@ function playGame(){
        
        
         playRound(human, computerChoice);    
-        stillPlay += 1;
-    }
+        // stillPlay += 1;
+    // }
 };
 
 
 playGame();
+
+
+const container = document.querySelector(".container");
+const newDiv = document.createElement("div");
+newDiv.setAttribute('style', 'border: black solid; background-color: blue;');
+
+
+const rock = document.createElement("button");
+rock.textContent = "ROCK";
+const paper = document.createElement("button");
+paper.textContent = "PAPER";
+const scissors = document.createElement("button");
+scissors.textContent = "SCISSORS";
+
+
+newDiv.appendChild(rock);
+newDiv.appendChild(paper);
+newDiv.appendChild(scissors);
+container.appendChild(newDiv);
+
+
+
+
+rock.addEventListener('click', playGame);
+paper.addEventListener('click', playGame);
+scissors.addEventListener('click', playGame);
+
+
+const result = document.createElement('div');
+result.textContent = "RESULT";
+newDiv.appendChild(result);
+
 
